@@ -6,9 +6,29 @@
 주의! 설치를 진행하실 때, _**ADD PYTHON TO LOCAL VARIABLE**_ 을 체크하셔야 나중에 편합니다. 
 (6강에서 pip를 사용하는데, 이 옵션이 체크되어 있으면 pip를 정말 쉽게 사용할 수 있습니다.)
 
-![image](python print(test))
+파이썬 설치를 완료하셨다면, Python 3 Shell을 열어 다음과 같은 코드를 작성해보세요!
 
-파이썬 설치를 완료하셨다면, 스크린샷에 나온 것과 같은 코드를 작성해보세요!
+    >>> print("Hello, World!")
+    Hello, World!
+
+    >>> 1 + 2
+    3
+    
+    >>> 26 - 3 * 7
+    5
+    
+    >>> 1.2 / 4.0
+    0.3
+    
+    >>> 'abc' + 'def'
+    'abcdef'
+    
+    >>> True or False
+    True
+    
+    >>> # 이렇게 "#" 뒤에 있는 문장은 "주석"으로 처리되며,
+    >>> # 이 주석은 파이썬 코드에 전혀 영향을 주지 않습니다!
+    
 
 ## 2. [PyCharm](https://www.jetbrains.com/pycharm/) (선택)
 [Pycharm 친절하게 설명된 설치과정(한글)](http://securityspecialist.tistory.com/58)

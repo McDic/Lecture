@@ -247,133 +247,145 @@ False | True
 
 ### list: 여러 변수들의 순차적 목록 (List)
 
-    a = [1, 2, 3]
-    b = [1.0, True, "Hello"]
-    c = [-0.9, [1, 2, False],  None]
+    >>> a = [1, 2, 3]
+    >>> b = [1.0, True, "Hello"]
+    >>> c = [-0.9, [1, 2, False],  None]
     
 - list는 변수들의 목록을 나타내기 위해 고안한 자료형들 중 하나입니다. 
 list는 여러 개의 변수들을 한번에 묶어서 표현할 수 있습니다.
 
-        print(a)
-        >> [1, 2, 3]
+        >>> print(a)
+        [1, 2, 3]
         
-        print(b)
-        >> [1.0, True, 'Hello']
+        >>> print(b)
+        [1.0, True, 'Hello']
         
 - 다음과 같이 리스트의 특정 위치의 원소만을 뽑아올 수 있습니다. 이걸 *indexing*이라고 합니다.
 대괄호를 이용해서 뽑아올 수 있으며, 맨 앞자리부터 0번째 원소입니다. 
         
-        print(b[0])
-        >> 1.0
+        >>> print(b[0])
+        1.0
         
-        print(b[1])
-        >> True
+        >>> print(b[1])
+        True
         
-        print(b[2])
-        >> Hello
+        >>> print(b[2])
+        Hello
         
 - 대괄호 안에 음수를 넣음으로써 뒤에서부터 원소를 뽑아낼 수 있습니다.
 
-        print(a[-1])
-        >> 3
+        >>> print(a[-1])
+        3
         
 - c의 경우처럼 리스트 안에 리스트도 얼마든지 넣을 수 있습니다.
 
 ### tuple: 여러 변수들의 "변경 불가능한" 순차적 목록 (Tuple)
 
-    a = (1, 2, 3)
-    b = (1.0, True, "Hello")
-    c = (-0.9, (1, 2, False), None)
+    >>> a = (1, 2, 3)
+    >>> b = (1.0, True, "Hello")
+    >>> c = (-0.9, (1, 2, False), None)
 
 ### 이번 강좌에서 생략하는 기본 제공 자료형들
 
 - **complex**: 복소수를 나타내기 위해 필요한 자료형입니다. 복소수를 쓸 일이 별로 많지 않기에, 본 강의에선 생략합니다.
     
-        a = 1 + 2j
-        b = 3 - 1j
+        >>> a = 1 + 2j
+        >>> b = 3 - 1j
         
-        print(a+b)
-        >> (4+1j)
+        >>> print(a+b)
+        (4+1j)
         
-        print(a-b)
-        >> (-2+3j)
+        >>> print(a-b)
+        (-2+3j)
         
-        print(a*b)
-        >> (5+5j)
+        >>> print(a*b)
+        (5+5j)
         
-        print(a/b)
-        >> (0.1+0.7000000000000001j)
+        >>> print(a/b)
+        (0.1+0.7000000000000001j)
         
-        print(a**b)
-        >> (-27.43638199160605+19.789310365010714j)
+        >>> print(a**b)
+        (-27.43638199160605+19.789310365010714j)
 
 - **frozenset**: set과 유사하지만, 원소를 추가하거나 제거할 수 없다는 특징이 있습니다.
 frozenset과 set의 관계는 tuple과 list의 관계와 유사합니다. 본 강의에선 생략합니다.
 
-        a = frozenset([1, 2, 3])
-        print(a)
-        >> frozenset({1, 2, 3})
+        >>> a = frozenset([1, 2, 3])
+        >>> print(a)
+        frozenset({1, 2, 3})
         
-        print(a.union({4, 5}))
-        >> frozenset({1, 2, 3, 4, 5})
+        >>> print(a.union({4, 5}))
+        frozenset({1, 2, 3, 4, 5})
+
+- **range**: 특정 영역의 정수들을 표현하는 데에 사용됩니다. 강의 초반부(Lec3.md)에서 배우게 됩니다.
+
+        >>> print(list(range(4))
+        [0, 1, 2, 3]
+        
+        >>> for i in range(5, 10, 2):
+        ...     print(i)
+        5
+        7
+        9
 
 - **function**: 함수를 나타냅니다. 강의 중반부(Lec4.md)에서 자세히 배우게 됩니다.
 
-        def f(x):
-            if x>0:
-                return x*x
-            else:
-                return -x*x
+        >>> def f(x):
+        ...    if x>0:
+        ...        return x*x
+        ...    else:
+        ...        return -x*x
         
-        print(f(2))
-        >> 4
+        >>> print(f(2))
+        4
         
-        print(f(-2))
-        >> -4
+        >>> print(f(-2))
+        -4
 
 - **object**: 파이썬의 모든 변수 자료형의 기본이 되는 자료형입니다. 
 강의 중반부(Lec5.md)에서 클래스 상속과 함께 배우게 됩니다.
 
-        a = object()
-        print(a)
-        >> <object object at 0x0000021BFFAEC340>
+        >>> a = object()
+        >>> print(a)
+        <object object at 0x0000021BFFAEC340>
 
 - **generator**: Iterator의 일종입니다. 파이썬이 아주 매력적인 이유 중 하나가 바로 이겁니다.
 지금 이해하기엔 어렵습니다. 강의 후반부(Lec7.md)에서 자세히 배우게 됩니다.
 
-        a = (i*i for i in range(1, 6))
-        for num in a:
-            print(num)
-        >> 1
-        >> 4
-        >> 9
-        >> 16
-        >> 25
+        >>> a = (i*i for i in range(1, 6))
+        >>> for num in a:
+        ...     print(num)
+        1
+        4
+        9
+        16
+        25
 
 - **file**: 파일(*.txt*, *.csv* 등)을 나타내는 자료형입니다. 강의 후반부(Lec8.md)에서 배우게 됩니다.
 
-        with open("test.txt", "w") as testfile:
-            testfile.write("Test writing")
+        >>> # 실제 test.txt 파일 내부를 확인해보세요.
+        >>> with open("test.txt", "w") as testfile:
+        ...    testfile.write("Test writing")
 
 - **Exception**, **StopIteration**, **ArithmeticError** 등등: 에러를 커버하는데 쓰이는 자료형입니다. 
 강의 후반부(Lec9.md)에서 자세히 배우게 됩니다.
 
-        a = Exception("Test Exception")
-        raise a
-        >> Exception: Test exception
+        >>> a = Exception("Test Exception")
+        >>> raise a
+        Exception: Test Exception
 
 - **bytes**, **bytearray**, **memoryview**: Binary Data(바이너리 데이터) 관련 자료형입니다. 본 강의에선 생략합니다.
     
-        a = bytes("Hello, World", "utf-8")
-        print(a)
-        >> b'Hello World'
+        >>> a = bytes("Hello, World", "utf-8")
+        >>> print(a)
+        b'Hello World'
 
-        b = bytearray([1, 2, 3])
-        print(b)
-        >> bytearray(b'\x01\x02\x03')
+        >>> b = bytearray([1, 2, 3])
+        >>> print(b)
+        bytearray(b'\x01\x02\x03')
 
-        c = memoryview(a)
-        print(c)
-        >> <memory at 0x000002301EFD2F48>
+        >>> c = memoryview(a)
+        >>> print(c)
+        <memory at 0x000002301EFD2F48>
 
 - 이 외에도 **builtins**, **filter**, **property**, **slice**, **super**, **zip** 등이 있지만, 넘어가겠습니다!

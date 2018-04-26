@@ -26,29 +26,29 @@
     >>> d = -0.9
     >>> e = a + 1 # e의 값은 11이 됩니다.
     
-공학용 계산기에 수식 집어넣듯이 숫자 쓰시면 됩니다.
+공학용 계산기에 수식 집어넣듯이 숫자 쓰시면 됩니다
 
 다음과 같이 수에 대한 사칙연산을 진행할 수가 있습니다.
         
-    >>> print(a+b) # 덧셈
+    >>> a+b # 덧셈
     12.7
         
-    >>> print(a-b) # 뺄셈
+    >>> a-b # 뺄셈
     7.3
         
-    >>> print(a*b) # 곱셈
+    >>> a*b # 곱셈
     27
     
-    >>> print(a/b) # 나눗셈 (완전)
+    >>> a/b # 나눗셈 (완전)
     3.7037037037037033
         
-    >> print(a//b) # 나눗셈 (몫)
+    >> a//b # 나눗셈 (몫)
     3.0
         
-    >> print(a%b) # 나눗셈 (나머지)
+    >> a%b # 나눗셈 (나머지)
     1.8999999999999995
         
-    >> print(a**b) # 지수 연산
+    >> a**b # 지수 연산
     501.18723362727246
         
 ## 3. 참/거짓 (Boolean) 자료형
@@ -58,13 +58,13 @@
     
 파이썬에서는 참, 거짓을 다룰 수 있습니다. 또, 다음과 같은 코드로 논리연산을 할 수도 있습니다.
 
-    >> print(a and b)
+    >> a and b # AND 연산
     False
         
-    >> print(a or b)
+    >> a or b # OR 연산
     True
         
-    >> print(not a)
+    >> not a # NOT 연산
     False
         
 이런 식으로 값이 오직 참, 거짓만 존재하는 체계를 *Boolean Logic(Algebra)* 라고 표현합니다. 
@@ -81,3 +81,48 @@ A   | not A
 --- | -----
 True | False
 False | True
+
+## 4. 문자열 (Sring) 자료형
+
+    >>> a = 'Hi, my name is McDic.'
+    
+파이썬에서는 문자열 자료형을 이용하여 문장을 다룹니다.
+파이썬에서 문자열 변수를 다루는 것은 C나 Java 등에 비해 정말 쉽습니다!
+
+다음과 같이 문자열을 이용한 여러 연산을 할 수 있습니다.
+
+    >>> a
+    'Hi, my name is McDic.'
+        
+    >>> print(a) # 그냥 출력하는 것과 print로 출력하는 것은 다르다.
+    Hi, my name is McDic.
+        
+    >>> a + ' What is your name?' # 문자열 합치기
+    'Hi, my name is McDic. What is your name?'
+        
+    >>> a.split(' ') # 특정 문자열로 나누기
+    ['Hi,', 'my', 'name', 'is', 'McDic.']
+        
+    >>> a.endswith('McDic.') # 특정 문자열로 끝나는가?
+    True
+        
+    >>> a.upper() # 소문자로 바뀐 문자열
+    'HI, MY NAME IS MCDIC.'
+        
+    >>> a.lower() # 대문자로 바뀐 문자열
+    'hi, my name is mcdic.'
+         
+    >>> a.count("m") # 부분문자열 개수 세기
+    2
+        
+    >>> a.replace("my", "your") # 문자열 교체하기
+    'Hi, your name is McDic.'
+    
+
+
+## 5. 컨테이너 (Container) 자료형
+
+    >>> a = [5, 9, -1, 2.34, False]
+    >>> b = (5, 9, -1, 2.34, False)
+    >>> c = {5, 9, -1, 2.34, False}
+    
